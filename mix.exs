@@ -20,7 +20,7 @@ defmodule NftApp.MixProject do
   def application do
     [
       mod: {NftApp.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :ex_machina]
     ]
   end
 
@@ -35,6 +35,7 @@ defmodule NftApp.MixProject do
     [
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
+      {:ex_machina, "~> 2.7.0"},
       {:husky, "~> 1.0.3", only: [:dev], runtime: false},
       {:phoenix, "~> 1.5.8"},
       {:phoenix_ecto, "~> 4.1"},
