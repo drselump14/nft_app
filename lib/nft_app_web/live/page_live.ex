@@ -1,4 +1,7 @@
 defmodule NftAppWeb.PageLive do
+  @moduledoc """
+  PageLive
+  """
   use NftAppWeb, :live_view
 
   @impl true

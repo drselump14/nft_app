@@ -16,6 +16,7 @@ defmodule NftAppWeb.ChannelCase do
   """
 
   use ExUnit.CaseTemplate
+  alias Ecto.Adapters.SQL.Sandbox
 
   using do
     quote do
@@ -29,10 +30,10 @@ defmodule NftAppWeb.ChannelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(NftApp.Repo)
+    :ok = Sandbox.checkout(NftApp.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(NftApp.Repo, {:shared, self()})
+      Sandbox.mode(NftApp.Repo, {:shared, self()})
     end
 
     :ok
